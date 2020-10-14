@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="acca761f-c304-4b43-8ca3-e1e03272ea55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interface/GameOfThrones.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameOfThrones.db" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/GameOfThrones.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameOfThrones.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/GameOfThrones.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/Insert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradeList.db" beforeDir="false" afterPath="$PROJECT_DIR$/Interface/HomePage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/АрьяСтарк.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/АрьяСтарк.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ДейнерисТаргариен.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/ДейнерисТаргариен.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ДжеймиЛанистер.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/ДжеймиЛанистер.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ДжонСноу.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/ДжонСноу.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ЛианаСтарк.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/ЛианаСтарк.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/РейгарТаргариен.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/РейгарТаргариен.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/СансаСтарк.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/СансаСтарк.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/СерсеяЛаннистер.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/СерсеяЛаннистер.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +130,26 @@
       <option name="presentableId" value="Default" />
       <updated>1601388074875</updated>
     </task>
+    <task id="LOCAL-00001" summary="Добавлен интерфейс">
+      <created>1602692264487</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602692264487</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Добавлен интерфейс">
+      <created>1602692282479</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602692282479</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Добавлен интерфейс" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен интерфейс" />
   </component>
   <component name="WindowStateProjectService">
     <state x="520" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601486348717">
