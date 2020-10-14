@@ -32,6 +32,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Екатерина &lt;wernerammvsu@yandex.ru&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1iBjr2LNBT3fau34CV4FNGOoBdB" />
@@ -147,6 +152,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="520" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1601486348717" />
+    <state x="424" y="7" key="CommitChangelistDialog2" timestamp="1602692261586">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="424" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1602692261586" />
     <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1602692177475">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
