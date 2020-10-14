@@ -16,6 +16,12 @@ def sql_init(con, table):
     con.commit()
 
 
+def sql_drop(con, table):
+    cursorObj = con.cursor()
+    cursorObj.execute('drop table if exists ' + table)
+    con.commit()
+
+
 con = sql_connection()
 con.cursor().execute('PRAGMA foreign_keys = ON')
 con.commit()
@@ -23,7 +29,18 @@ con.commit()
 # con.commit()
 # con.cursor().execute('drop table if exists Actor')
 # con.commit()
-
+"""
+sql_drop(con, 'Character_Actor')
+sql_drop(con, 'Character_House')
+sql_drop(con, 'House_Castle')
+sql_drop(con, 'Vassal')
+sql_drop(con, 'House_Head')
+sql_drop(con, 'Character')
+sql_drop(con, 'Actor')
+sql_drop(con, 'House')
+sql_drop(con, 'Castle')
+sql_drop(con, 'User')
+"""
 
 sql_init(con, 'Character(id integer PRIMARY KEY, '
               'name text, '
@@ -46,6 +63,7 @@ sql_init(con, 'Actor(id integer PRIMARY KEY, '
               'description text)')
 
 sql_init(con, 'House(id integer PRIMARY KEY, '
+              'name text, '
               'area text, '
               'motto text, '
               'description text)')
@@ -83,3 +101,8 @@ sql_init(con, 'House_Head(id_character integer, '
               'time integer, '
               'FOREIGN KEY(id_character) REFERENCES Character(id), '
               'FOREIGN KEY(id_house) REFERENCES House(id) )')
+
+sql_init(con, 'User(id integer PRIMARY KEY, '
+              'login text, '
+              'password text, '
+              'admin tinyint(1) DEFAULT 0)')

@@ -65,10 +65,10 @@ sql_input(con, 'Actor', "'Мэйси', 'Уильямс', 'АрьяСтарк.jpg
 """
 print(con.cursor().execute('select * from Actor').fetchall())
 """
-sql_input(con, 'House', "'Север', 'Зима близко', 'Старк' ")
-sql_input(con, 'House', "'Запад', 'Услышь мой рёв', 'Ланнистеры' ")
-sql_input(con, 'House', "'Железные  острова', 'Мы не сеем', 'Грейджои' ")
-sql_input(con, 'House', "'Дорн', 'Непреклонные, несгибаемые, несдающиеся', 'Мартеллы' ")
+sql_input(con, 'House', "'Старк', 'Север', 'Зима близко', 'Дом Старк' ")
+sql_input(con, 'House', "'Ланнистеры', 'Запад', 'Услышь мой рёв', 'Дом ланнистеров' ")
+sql_input(con, 'House', "'Грейджои', 'Железные  острова', 'Мы не сеем', 'Дом' ")
+sql_input(con, 'House', "'Мартеллы', 'Дорн', 'Непреклонные, несгибаемые, несдающиеся', 'Ещё один дом' ")
 """
 print(con.cursor().execute('select * from House').fetchall())
 """
@@ -87,3 +87,7 @@ sql_input_non_id(con, 'Character_Actor', " 3, 3, 0")
 sql_input_non_id(con, 'Character_Actor', " 4, 4, 0")
 """
 print(con.cursor().execute('select * from Character_Actor').fetchall())
+
+"""
+sql_input(con, 'User', "'admin','admin','1'")
+"""
