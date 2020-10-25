@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="acca761f-c304-4b43-8ca3-e1e03272ea55" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/DataBase/GameOfThrones.db" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/GameOfThrones.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/GameOfThrones.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/Create.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/Insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/Insert.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interface/GameOfThrones.db" beforeDir="false" afterPath="$PROJECT_DIR$/Interface/GameOfThrones.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interface/HomePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interface/HomePage.py" afterDir="false" />
+=======
+>>>>>>> d494653193ac29afb0244895209a18e247b9165c
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,6 +199,7 @@
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
       <list>
@@ -206,6 +210,8 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> d494653193ac29afb0244895209a18e247b9165c
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавлен интерфейс" />
     <option name="LAST_COMMIT_MESSAGE" value="Добавлен интерфейс" />
