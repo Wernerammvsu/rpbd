@@ -91,3 +91,4 @@ print(con.cursor().execute('select * from Character_Actor').fetchall())
 """
 sql_input(con, 'User', "'admin','admin','1'")
 """
+print(con.cursor().execute('select * from User').fetchall())

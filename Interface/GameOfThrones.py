@@ -18,10 +18,14 @@ con = sql_connection()
 window = Tk()
 window["bg"] = "gray22"
 window.title("Game Of Thrones Data Base")
-window.geometry('1060x1300')
+window.geometry('1060x600')
+window.resizable(width=False,height=False)
 
+window.update_idletasks()
+print(window.geometry())
 start_page(con,window)
 
+print(con.cursor().execute('select * from User').fetchall())
 
 
 

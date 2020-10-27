@@ -12,6 +12,7 @@ class home_page:
         self.width = self.window.winfo_width()
         self.height = self.window.winfo_height()
 
+
         # --------------------------------------
         # ------------TOP-BUTONS----------------
         # --------------INSERT------------------
@@ -54,15 +55,22 @@ class home_page:
         self.image = Image.open("../Images/Game.jpg")
         self.photo = ImageTk.PhotoImage(self.image)
         self.image = self.canvas.create_image(0, 0, anchor='nw', image=self.photo)
-        self.canvas.grid(rows=1, column=0)
+        self.canvas.grid(row=1, column=0)
 
     def clear_screen(self):
         self.clear = Frame(master=self.window, width=self.width, height=self.height, bg="gray22")
         self.clear.grid(row=0, column=0)
 
     def clear_grid(self):
-        self.clear = Frame(master=self.window, width=500, height=500, bg="gray22")
-        self.clear.grid(row=2, column=0, sticky=W)
+        if hasattr(self, 'castle'):
+            self.castle.grid_forget()
+        if hasattr(self, 'house'):
+            self.house.grid_forget()
+        if hasattr(self, 'character'):
+            self.character.grid_forget()
+        if hasattr(self, 'actor'):
+            self.actor.grid_forget()
+
 
     def clicked_home(self):
         self.clear_grid()
@@ -70,40 +78,52 @@ class home_page:
 
     def clicked_castle(self):
         self.clear_grid()
-        self.castle = Frame(bg="gray22")
-        rowK = 0
-        for i in self.con.cursor().execute('select name from Castle').fetchall():
-            Label(text=i[0], master=self.castle, font=14, bg="gray22", fg='white').grid(row=rowK, column=0, sticky=W)
-            rowK += 1
-        self.castle.grid(row=2, column=0, sticky=NW, padx=20, pady=20)
+        if hasattr(self, 'castle'):
+            self.castle.grid(row=2, column=0, sticky=NW, padx=20, pady=20)
+        else:
+            self.castle = Frame(bg="gray22")
+            rowK = 0
+            for i in self.con.cursor().execute('select name from Castle').fetchall():
+                Label(text=i[0], master=self.castle, font=14, bg="gray22", fg='white').grid(row=rowK, column=0, sticky=W)
+                rowK += 1
+            self.castle.grid(row=2, column=0, sticky=NW, padx=20, pady=20)
 
     def clicked_house(self):
         self.clear_grid()
-        self.house = Frame(bg="gray22")
+        if hasattr(self, 'house'):
+            self.house.grid(row=2, column=0, sticky=NW, padx=20, pady=20)
+        else:
+            self.house = Frame(bg="gray22")
 
-        rowK = 0
-        for i in self.con.cursor().execute('select name from House').fetchall():
-            Label(text=i[0], master=self.house, font=14, bg="gray22", fg='white').grid(row=rowK, column=0, sticky=W)
-            rowK += 1
-        self.house.grid(row=2, column=0, sticky=NW, padx=20, pady=20)
+            rowK = 0
+            for i in self.con.cursor().execute('select name from House').fetchall():
+                Label(text=i[0], master=self.house, font=14, bg="gray22", fg='white').grid(row=rowK, column=0, sticky=W)
+                rowK += 1
+            self.house.grid(row=2, column=0, sticky=NW, padx=20, pady=20)
 
     def clicked_actor(self):
         self.clear_grid()
-        self.actor = Frame(bg="gray22")
-        rowK = 0
-        for i in self.con.cursor().execute('select name, surname from Actor').fetchall():
-            Label(text=i[0] + ' ' + i[1], master=self.actor, font=14, bg="gray22", fg='white').grid(row=rowK, column=0,
-                                                                                                    sticky=W)
-            rowK += 1
-        self.actor.grid(row=2, column=0, sticky=NW, padx=20, pady=20)
+        if hasattr(self, 'actor'):
+            self.actor.grid(row=2, column=0, sticky=NW, padx=20, pady=20)
+        else:
+            self.actor = Frame(bg="gray22")
+            rowK = 0
+            for i in self.con.cursor().execute('select name, surname from Actor').fetchall():
+                Label(text=i[0] + ' ' + i[1], master=self.actor, font=14, bg="gray22", fg='white').grid(row=rowK, column=0,
+                                                                                                        sticky=W)
+                rowK += 1
+            self.actor.grid(row=2, column=0, sticky=NW, padx=20, pady=20)
 
     def clicked_character(self):
         self.clear_grid()
-        self.character = Frame(bg="gray22", )
-        rowK = 0
-        for i in self.con.cursor().execute('select name, surname from Character').fetchall():
-            Label(text=i[0] + ' ' + i[1], master=self.character, font=14, bg="gray22", fg='white').grid(row=rowK,
-                                                                                                        column=0,
-                                                                                                        sticky=W)
-            rowK += 1
-        self.character.grid(row=2, column=0, sticky=NW, padx=20, pady=20)
+        if hasattr(self, 'character'):
+            self.character.grid(row=2, column=0, sticky=NW, padx=20, pady=20)
+        else:
+            self.character = Frame(bg="gray22", )
+            rowK = 0
+            for i in self.con.cursor().execute('select name, surname from Character').fetchall():
+                Label(text=i[0] + ' ' + i[1], master=self.character, font=14, bg="gray22", fg='white').grid(row=rowK,
+                                                                                                            column=0,
+                                                                                                            sticky=W)
+                rowK += 1
+            self.character.grid(row=2, column=0, sticky=NW, padx=20, pady=20)
