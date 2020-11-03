@@ -1,6 +1,5 @@
 import tkinter
 from tkinter import *
-from PIL import Image, ImageTk
 import sqlite3
 from sqlite3 import Error
 from StartClass import start_page
