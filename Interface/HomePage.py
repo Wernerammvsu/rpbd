@@ -1,34 +1,32 @@
 from tkinter import *
-from tkinter import font
 
-root = Tk()
-root.title('Font Families')
-fonts=list(font.families())
-fonts.sort()
+def data():
+    for i in range(50):
+       Label(frame,text=i).grid(row=i,column=0)
+       Label(frame,text="my text"+str(i)).grid(row=i,column=1)
+       Label(frame,text="..........").grid(row=i,column=2)
 
-def populate(frame):
-    '''Put in the fonts'''
-    listnumber = 1
-    for item in fonts:
-        label = "listlabel" + str(listnumber)
-        label = Label(frame,text=item,font=(item, 16)).pack()
-        listnumber += 1
+def myfunction(event):
+    canvas.configure(scrollregion=canvas.bbox("all"),width=200,height=200)
 
-def onFrameConfigure(canvas):
-    '''Reset the scroll region to encompass the inner frame'''
-    canvas.configure(scrollregion=canvas.bbox("all"))
+root=Tk()
+sizex = 800
+sizey = 600
+posx  = 100
+posy  = 100
+root.wm_geometry("%dx%d+%d+%d" % (sizex, sizey, posx, posy))
 
-canvas = Canvas(root, borderwidth=0, background="#ffffff")
-frame = Frame(canvas, background="#ffffff")
-vsb = Scrollbar(root, orient="vertical", command=canvas.yview)
-canvas.configure(yscrollcommand=vsb.set)
+myframe=Frame(root,relief=GROOVE,width=50,height=100,bd=1)
+myframe.place(x=10,y=10)
 
-vsb.pack(side="right", fill="y")
-canvas.pack(side="left", fill="both", expand=True)
-canvas.create_window((4,4), window=frame, anchor="nw")
+canvas=Canvas(myframe)
+frame=Frame(canvas)
+myscrollbar=Scrollbar(myframe,orient="vertical",command=canvas.yview)
+canvas.configure(yscrollcommand=myscrollbar.set)
 
-frame.bind("<Configure>", lambda event, canvas=canvas: onFrameConfigure(canvas))
-
-populate(frame)
-
+myscrollbar.pack(side="right",fill="y")
+canvas.pack(side="left")
+canvas.create_window((0,0),window=frame,anchor='nw')
+frame.bind("<Configure>",myfunction)
+data()
 root.mainloop()

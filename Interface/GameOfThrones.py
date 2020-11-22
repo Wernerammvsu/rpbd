@@ -1,8 +1,12 @@
-import tkinter
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+import os, sys
 from tkinter import *
 import sqlite3
 from sqlite3 import Error
 from StartClass import start_page
+import pygame
+
 
 def sql_connection():
     try:
@@ -22,10 +26,13 @@ window.resizable(width=False,height=False)
 
 window.update_idletasks()
 print(window.geometry())
-start_page(con,window)
+start_page(con, window)
 
 print(con.cursor().execute('select * from User').fetchall())
 
+pygame.mixer.init()
+pygame.mixer.music.load("2.mp3")
+pygame.mixer.music.play(-1, 0.0)
 
 
 

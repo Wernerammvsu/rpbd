@@ -42,6 +42,7 @@ sql_drop(con, 'Castle')
 sql_drop(con, 'User')
 """
 
+
 sql_init(con, 'Character(id integer PRIMARY KEY, '
               'name text, '
               'surname text, '
@@ -50,14 +51,12 @@ sql_init(con, 'Character(id integer PRIMARY KEY, '
               'id_mother integer, '
               'id_father integer, '
               'age integer, '
-              'image text, '
               'description text, '
               'side text)')
 
 sql_init(con, 'Actor(id integer PRIMARY KEY, '
               'name text, '
               'surname text, '
-              'image text, '
               'age integer, '
               'country text, '
               'description text)')
