@@ -7,6 +7,7 @@ from tkinter import messagebox
 from PIL import Image, ImageTk
 from CastleClass import castle_page
 from HouseClass import house_page
+from CharacterClass import character_page
 from AddNewPage import new_page
 import StartClass
 
@@ -178,16 +179,21 @@ class home_page:
         if hasattr(self, 'character'):
             self.character.place(x=20, y=235, anchor='nw')
         else:
-            self.character = Frame()
-            self.character_list = self.canvas_scroll(self.width-60, self.height-280, self.character)
+            self.character = Frame( bg="gray22")
+            self.character_sub = Frame(master=self.character)
+            self.character_list = self.canvas_scroll(self.width-60, self.height-280, self.character_sub)
             rowK = 0
             self.character_buttons = []
-            for i in self.con.cursor().execute('select name, surname from Character order by name, surname').fetchall():
+            for i in self.con.cursor().execute('select name, surname, id from Character order by name, surname').fetchall():
                 self.character_buttons.append(
                     Button(text=i[0] + " " + i[1], master=self.character_list, font=14, bg=self.bg, fg='white',
-                           activebackground="gray80", width=20, anchor=W, relief=FLAT))
+                           activebackground="gray80", width=20, anchor=W, relief=FLAT,  command=lambda ID=i[2]: self.character_info(ID)))
                 self.character_buttons[rowK].grid(row=rowK, column=0)
                 rowK += 1
+            if self.admin:
+                Button(master=self.character, text = 'Добавить', font=20, bg="gray20", fg='white', activebackground="gray80",
+                           width=20, anchor=W, relief=FLAT, command=lambda type='character': self.add_new_page(type)).grid(row=0, column=0, sticky=W)
+            self.character_sub.grid(row=1, column=0)
             self.character.place(x=20, y=235, anchor='nw')
 
         # --------------------------------------
@@ -279,6 +285,10 @@ class home_page:
     def house_info(self, ID):
         self.clear_screen()
         house_page(self.con, self.window, self.id, ID)
+
+    def character_info(self, ID):
+        self.clear_screen()
+        character_page(self.con, self.window, self.id, ID)
 
     def clicked_exit(self):
         self.clear_screen()
